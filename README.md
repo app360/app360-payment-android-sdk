@@ -32,6 +32,7 @@ Download the Android SDK from the this repo, unzip the App360 Payment SDK file.
 - Repeat this step to import _app360sdk_.
 - Right-click on _app360paymentsdk_ project, choose _Properties_, inside _Android_ > _Library_, add _app360sdk_ as a library of _app360paymentsdk_ .
 - Right-click on your project, choose _Properties_, inside _Android_ > _Library_, add _app360paymentsdk_ as a library project dependency.
+
 ### Android studio
 - Import App360 Payment SDK: Choose _File_ > _Import Module..._, then browse to app360paymentsdk directory inside the repository. Click Finish and wait until the import is completed.
 - Import App360SDK: Choose _File_ > _Import Module..._, then browse to app360sdk directory inside the repository. Click Finish and wait until the import is completed.
