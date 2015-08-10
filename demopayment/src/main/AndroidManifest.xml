@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="vn.mog.app360.sdk.demo"
+    android:versionCode="2"
+    android:versionName="1.1" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="22" />
+
+    <!-- Uncomment to support SMS payments -->
+    <!-- <uses-permission android:name="android.permission.SEND_SMS"/> -->
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Support tracking advertising campaign -->
+        <receiver
+            android:name="vn.mog.app360.sdk.receiver.CampaignReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <!-- End support tracking advertising campaign -->
+
+        <activity
+            android:name="vn.mog.app360.sdk.demo.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="vn.mog.app360.sdk.demo.ListPaymentActivity"
+            android:label="@string/list_payment_method" />
+        <activity
+            android:name=".payment.SMSPaymentActivity"
+            android:label="@string/sms_payment" />
+        <activity
+            android:name=".payment.CardPaymentActivity"
+            android:label="@string/card_payment" />
+        <activity
+            android:name=".payment.BankingPaymentActivity"
+            android:label="@string/banking_payment" />
+    </application>
+
+</manifest>

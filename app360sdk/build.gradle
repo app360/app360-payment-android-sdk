@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        warning 'InvalidPackage'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.squareup.retrofit:retrofit:1.8.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.3.0'
+}
+
+task exportDependenciesJars(type: Copy) {
+    into "src/main/libs"
+    from configurations.compile
+}
+
+android.libraryVariants.all { variant ->
+    task("generate${variant.name.capitalize()}Javadoc", type: Javadoc) {
+        dependsOn "compile${variant.name.capitalize()}Sources"
+        source = variant.javaCompile.source
+        classpath = files(variant.javaCompile.classpath.files, project.android.getBootClasspath(), variant.javaCompile.destinationDir)
+        options {
+            links "http://docs.oracle.com/javase/7/docs/api/"
+            linksOffline "http://d.android.com/reference", "${android.sdkDirectory}/docs/reference"
+            noTimestamp true
+        }
+        exclude('**/utils/**', '**/widget/**', '**/commons/**')
+        exclude '**/BuildConfig.java'
+        exclude '**/R.java'
+    }
+
+    task("generate${variant.name.capitalize()}JavadocJar", type: Jar) {
+        dependsOn "generate${variant.name.capitalize()}Javadoc"
+        classifier = 'javadoc'
+        from tasks["generate${variant.name.capitalize()}Javadoc"]
+    }
+}

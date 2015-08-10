@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">M360-SDK Demo</string>
+    <string name="appId">1004015958365193309493</string>
+    <string name="appSecretKey">4QkZUK5MjaOVANqV7Vr4zZB2SdEai1ggtaVibysugqIurO28</string>
+
+    <!--  -->
+    <string name="loading">Loading&#8230;</string>
+    <string name="list_payment_method">List payment method</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sms_payment">SMS Payment</string>
+    <string name="card_payment">Card Payment</string>
+    <string name="banking_payment">Banking Payment</string>
+    <string name="amount">Amount</string>
+    <string name="enter_amount_number">Amount (VNĐ). Eg: 15000 or 10000</string>
+    <string name="get_syntax">Get Syntax</string>
+    <string name="syntax">Syntax</string>
+    <string name="syntax_hint">Enter amount and click Get Syntax</string>
+    <string name="send_sms">Send SMS via Intent</string>
+    <string name="vendor">Vendor</string>
+
+    <string-array name="vendors">
+        <item>Viettel</item>
+        <item>Vinaphone</item>
+        <item>Mobifone</item>
+    </string-array>
+
+    <string name="serial">Serial</string>
+    <string name="code_pin">Code/PIN</string>
+    <string name="charge">Charge</string>
+    <string name="get_url">Get URL</string>
+    <string name="url_hint">Enter amount and click Get URL</string>
+    <string name="open_browser">Open in Browser</string>
+    
+    <!--  -->
+    <string name="warning_bank_amount">Amount must larger than 10000</string>
+    <string name="get_syntax_fail">Get Syntax fail.\nSee Logcat for detail.</string>
+    <string name="get_pay_url_fail">Get Payment URL fail.\nSee Logcat for detail.</string>
+    <string name="charge_fail">Charge fail: %1$s</string>
+    <string name="charge_success">Charge success</string>
+
+    <string name="amount_not_valid">Amount not valid</string>
+
+</resources>
