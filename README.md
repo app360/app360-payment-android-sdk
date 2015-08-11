@@ -28,11 +28,15 @@ The first thing you need to do is integrate your game/app with App360SDK. For mo
 Download the Android SDK from the this repo, unzip the App360 Payment SDK file.
 
 ### Eclipse
-- _File > Import..._, then inside the Import dialog, choose _General_ > _Existing projects into workspace_, then select _app360paymentsdk_ folder. 
-- Repeat this step to import _app360sdk_.
+- _File > Import..._, then inside the Import dialog, choose _General_ > _Existing projects into workspace_, then select _app360paymentsdk_ folder.
+
+ ![import payment sdk](http://i.imgur.com/DZNUL7Q.png)
 - Right-click on _app360paymentsdk_ project, choose _Properties_, inside _Android_ > _Library_, add _app360sdk_ as a library of _app360paymentsdk_ .
+
+ ![depen payment sdk](http://i.imgur.com/tMV89MN.png)
 - Right-click on your project, choose _Properties_, inside _Android_ > _Library_, add _app360paymentsdk_ as a library project dependency.
 
+ ![depen my app](http://i.imgur.com/9i8YT6k.png)
 ### Android studio
 - Import App360 Payment SDK: Choose _File_ > _Import Module..._, then browse to app360paymentsdk directory inside the repository. Click Finish and wait until the import is completed.
 - Import App360SDK: Choose _File_ > _Import Module..._, then browse to app360sdk directory inside the repository. Click Finish and wait until the import is completed.
